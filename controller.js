@@ -1,20 +1,17 @@
-"use strict";
-
-class shopping_controller {
-	constructor{		
-	}
-
-	newItem() {
-		let itemname = document.getElementbyId("itemname").value;
-		let qty = document.getElementbyId("qty").value;
-		let store = document.getElementbyId("store").value;
-		let category = document.getElementbyId("category").value;
-		let price = document.getElementbyId("price").value;
-
-		let newItem = new Item(itemname, qty, store, category, price);
-		let table = document.getElementbyId("body");
-		table.appendChild(newItem.makeRow(0));
-		sl.ShoppingList.push(newItem);
-		sl.saveMe();
-	}
+list = new ShoppingList()
+count = 0;
+function addUpdate(){
+	itemname = document.getElementbyId("itemname").value;
+	qty = document.getElementbyId("qty").value;
+	store = document.getElementbyId("store").value;
+	category = document.getElementbyId("category").value;
+	price = document.getElementbyId("price").value;
 }
+
+myStorage = window.localStorage;
+
+var itemname = localStorage.getItem("itemname");
+var qty = localStorage.getItem("qty");
+var store = localStorage.getItem("store");
+var category = localStorage.getItem("category");
+var price = localStorage.getItem("price");
